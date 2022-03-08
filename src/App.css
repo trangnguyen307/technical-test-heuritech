@@ -1,38 +1,102 @@
-.App {
-  text-align: center;
-}
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap");
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  font-family: "Playfair Display", serif;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.header {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  width: 100%;
+}
+.header h1 {
+  flex: 1;
+  margin-left: 10px;
+}
+.header .filter {
+  display: flex;
+}
+.header .filter div {
+  margin: auto 10px;
+}
+.header .filter div select {
+  background-color: #9b9b9b;
+  color: #fff;
+  line-height: 0px;
+  border: none;
+  cursor: pointer;
+  padding: 5px 10px;
 }
 
-.App-link {
-  color: #61dafb;
+.trend-list {
+  display: flex;
+  flex-wrap: wrap;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.trend-list .trend {
+  text-align: center;
+  width: 25%;
+  height: 200px;
+  position: relative;
+  cursor: pointer;
+}
+
+.trend-list .trend::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 2.5%;
+  right: 2.5%;
+  bottom: 5%;
+  z-index: 1;
+  background-image: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.6),
+    rgba(255, 255, 255, 0)
+  );
+}
+.trend-list .trend:hover {
+  opacity: 0.8;
+}
+.trend-list .trend img {
+  width: 95%;
+  height: 95%;
+  object-fit: cover;
+}
+.trend-list .trend .trend-name {
+  position: absolute;
+  bottom: 10px;
+  left: 5%;
+  color: #fff;
+  z-index: 2;
+  font-size: 20px;
+  width: 75%;
+  text-align: start;
+  margin: 16px 0px;
+}
+.trend-list .trend div {
+  position: absolute;
+  bottom: 10px;
+  z-index: 2;
+  right: 5%;
+  text-align: end;
+}
+.trend-list .trend div p:nth-child(1) {
+  color: #fff;
+  font-size: 14px;
+  margin: 0px;
+  opacity: 0.8;
+}
+.trend-list .trend div p:nth-child(2) {
+  color: #50e463;
+  margin: 5px 0px 16px;
+}
+.button p {
+  border: 1px solid #000;
+  border-radius: 20px;
+  width: fit-content;
+  padding: 5px 20px;
+  cursor: pointer;
+  margin: auto;
+}
+.button p:hover {
+  opacity: 0.5;
 }
