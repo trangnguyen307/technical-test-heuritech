@@ -65,7 +65,6 @@ function App() {
       {
         filters.pageSize < trendList.total && <div className='button'>
           <p onClick={handlePage}>See more trends</p>
-          {/* <hr /> */}
         </div>
       }
 
